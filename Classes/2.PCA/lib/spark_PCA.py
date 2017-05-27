@@ -52,5 +52,8 @@ if __name__=="__main__":
 
     #find PCA decomposition
     eigval,eigvec=LA.eig(OUT['Cov'])
+    idx = -eigval.argsort()[::-1]   
+    eigval = eigval[idx]
+    eigvec = eigvec[:,idx]
     print 'eigval=',eigval
     print 'eigvec=',eigvec
